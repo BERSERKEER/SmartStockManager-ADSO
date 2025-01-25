@@ -1,0 +1,49 @@
+:root {
+  --text-muted: #99a0b0; /* Texto apagado o secundario */
+  --background-light: #f5f5fa; /* Fondo claro */
+  --color-white: #fff; /* Blanco */
+  --color-smooth-white: #ede8f0; /* Blanco suave */
+  --text-dark: #1b253d; /* Texto principal oscuro */
+  --primary: #4b84fe; /* Color primario */
+  --primary-hover: #1861fe; /* Color primario al pasar el cursor */
+  --primary-active: #0149e2; /* Color primario activo */
+  --border-light: #ede8f0; /* Bordes o separadores claros */
+  --text-secondary: #b6bbc6; /* Texto secundario */
+  --background-dark: #2b3a60; /* Fondo oscuro */
+  --danger: #fa5b67; /* Color de error o peligro */
+  --warning: #ffbb09; /* Color de advertencia */
+  --Transparent-grey-color: #f4f4f447;
+  --color-red: #d33131;
+  --color-green: #2bb15c;
+  --default-radius: 8px;
+
+  /* Escala tipográfica */
+  --font-size-xxl: 2rem; /* Títulos principales (h1) */
+  --font-size-xl: 1.5rem; /* Subtítulos grandes (h2) */
+  --font-size-lg: 1.25rem; /* Subtítulos pequeños (h3) */
+  --font-size-md: 1rem; /* Texto principal (p, span, etc.) */
+  --font-size-sm: 0.875rem; /* Texto secundario o botones pequeños */
+  --font-size-xs: 0.75rem; /* Etiquetas, textos auxiliares */
+
+  /* Líneas de altura */
+  --line-height-xxl: 2.5rem; /* Para textos grandes */
+  --line-height-xl: 2rem; /* Subtítulos */
+  --line-height-lg: 1.75rem; /* Títulos menores */
+  --line-height-md: 1.5rem; /* Cuerpo de texto */
+  --line-height-sm: 1.25rem; /* Texto compacto */
+
+  /* Fuentes */
+  --font-main: Arial, sans-serif; /* Para textos grandes */
+
+  /*Ejemplo de aplicación en el dashboard:
+  Encabezado:
+  Título principal (h1): --font-size-xxl
+  Subtítulo (h2): --font-size-xl
+
+  Contenido principal:
+  Texto principal (p): --font-size-md
+  Detalles secundarios: --font-size-sm
+
+  Etiquetas y datos pequeños:
+  Texto auxiliar (span, small): --font-size-xs */
+}

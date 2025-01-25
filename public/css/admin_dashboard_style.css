@@ -1,0 +1,151 @@
+@import url("root.css");
+
+body {
+  font-family: var(--font-main);
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  background: linear-gradient(-135deg, #ede8f0, #4b84fe);
+  color: var(--color-white);
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas:
+    "aside header"
+    "aside main"
+    "aside footer";
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+main {
+  grid-area: main;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.welcome-content {
+  max-width: 50%;
+  text-align: left;
+  animation: fadeIn 2s ease-in-out;
+  padding-bottom: 8em;
+}
+
+.welcome-content h1 {
+  font-size: 3rem;
+  margin: 0 0 20px;
+}
+
+.welcome-content p {
+  font-size: 1.5rem;
+  margin: 0 0 30px;
+}
+
+.welcome-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: var(--primary-hover);
+  border: none;
+  color: var(--color-white);
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Imagen a la derecha */
+.welcome-image {
+  max-width: 45%;
+  text-align: right;
+}
+
+.welcome-image img {
+  max-width: 100%;
+  max-height: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .welcome-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}

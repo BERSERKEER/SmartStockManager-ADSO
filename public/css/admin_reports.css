@@ -1,0 +1,209 @@
+:root {
+  /* Colores */
+  --color-primary: #fbab7e;
+  --color-secondary: #f7ce68;
+  --color-dark: #161616;
+  --color-light: #e5e5e5;
+  --color-sidebar-bg: #1d1d29;
+  --color-card-bg: #fff;
+  --color-text-dark: black;
+  --color-text-light: #525252;
+  --color-light-grey: #f9f9f9; /* Color para filas alternas de tabla */
+  --color-lightest: #f0f8ff; /* Color de fondo de charts */
+  
+  /* Fuentes */
+  --font-family: 'Noto Sans', sans-serif;
+  --font-size-base: 1rem; /* 16px */
+  --font-size-h2: 1.25rem; /* 20px */
+  --font-size-h5: 0.875rem; /* 14px */
+  --font-size-hour: 2rem; /* 32px */
+  --font-size-table: 0.9rem; /* Tamaño para texto en tablas */
+
+  /* Espaciados y bordes */
+  --padding-base: 1.25rem;
+  --padding-card: 1rem;
+  --border-radius: 0.5rem;
+  --gap-base: 1rem;
+  --padding-table-cell: 0.5rem;
+  
+  /* Medidas de la interfaz */
+  --sidebar-width-collapsed: 5rem;
+  --sidebar-width-expanded: 12.5rem;
+  --card-min-height: 7rem;
+  --card-1-img-width: 80px; /* Imagen de card-1 */
+  
+  /* Medidas de contenedores y tarjetas */
+  --card-gap: 10px;
+  --stat-padding: 15px;
+  --stat-border-radius: 8px;
+  
+  /* Medidas de gráficos */
+  --chart-height: 300px;
+  --chart-bg: var(--color-lightest);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  min-block-size: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width-collapsed) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  transition: grid-template-columns 0.3s ease;
+}
+
+body.sb-expand {
+  grid-template-columns: var(--sidebar-width-expanded) 1fr;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+}
+
+.dashboard-sidebar {
+  grid-area: sidebar;
+  background-color: var(--color-sidebar-bg);
+}
+
+.dashboard-main {
+  grid-area: main;
+  padding: var(--padding-base);
+  display: grid;
+  gap: var(--gap-base);
+}
+
+@media (min-width: 768px) {
+  .dashboard-main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.card {
+  padding: var(--padding-card);
+  min-block-size: var(--card-min-height);
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+}
+
+.card-1 {
+  background-image: linear-gradient(62deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-1 img {
+  width: var(--card-1-img-width);
+}
+
+.data-user {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-column: span 2;
+  }
+  .card-1 {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-4 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .card-5 {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+}
+
+/* Tabla de estadísticas */
+.card-2 table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-size-table);
+}
+
+.card-2 th, .card-2 td {
+  padding: var(--padding-table-cell);
+  border: 1px solid var(--color-light);
+}
+
+.card-2 th {
+  background-color: var(--color-primary);
+  color: var(--color-card-bg); /* Usamos un color claro para el texto */
+  text-transform: uppercase;
+}
+
+.card-2 tr:nth-child(even) {
+  background-color: var(--color-light-grey);
+}
+
+.card-2 tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Sistema de grid para estadísticas */
+  gap: var(--card-gap);
+}
+
+.stats .stat {
+  background: var(--color-light-grey);
+  padding: var(--stat-padding);
+  border-radius: var(--stat-border-radius);
+  text-align: center;
+}
+
+.stats .stat h3 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--gap-base);
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--chart-height);
+  background: var(--chart-bg);
+  border-radius: var(--stat-border-radius);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-gap);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  background: var(--color-card-bg);
+  margin-bottom: var(--gap-base);
+  padding: var(--stat-padding);
+  border-radius: var(--stat-border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
