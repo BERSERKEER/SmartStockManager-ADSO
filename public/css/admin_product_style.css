@@ -1,13 +1,12 @@
-@import url("root.css");
-
+@import url(root.css);
 /* Estructura base del body */
 body {
   font-family: var(--font-main);
   height: 100vh;
   display: grid;
   background-color: var(--background-light);
+  grid-template-columns: 10% 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 300px 1fr;
   grid-template-areas:
     "aside header"
     "aside main"
@@ -23,166 +22,94 @@ body {
       "main"
       "footer";
   }
-
   aside {
     display: none;
   }
 }
 
-/* Contenedor del contenido principal */
 main {
   grid-area: main;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto;
   gap: 20px;
 }
 
-.product-header h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--text-dark);
-}
-
-/* Grid para las tarjetas de productos */
-.product-grid {
+/* Stats Cards */
+.stats-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  grid-column: 1 / -1;
 }
 
-/* Estilo de las tarjetas */
-.product-card {
+.stat-card {
   background-color: var(--color-white);
-  border-radius: var(--default-radius);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  border-radius: 15px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  gap: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Sección de bienvenida */
+.welcome-section {
+  grid-column: 1 / -1;
+  background-color: var(--primary-hover);
+  border-radius: 15px;
+  padding: 30px;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.welcome-section h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/*Estyilos card*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, auto);
+  gap: 20px;
+}
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 .product-card img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-}
-
-.product-card h3 {
-  font-size: 18px;
-  color: var(--text-dark);
-}
-
-.product-card p {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.edit-btn,
-.delete-btn {
-  padding: 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.edit-btn {
-  background-color: var(--success-color);
-  color: white;
-}
-
-.edit-btn:hover {
-  background-color: var(--success-color-dark);
-}
-
-.delete-btn {
-  background-color: var(--danger-color);
-  color: white;
-}
-
-.delete-btn:hover {
-  background-color: var(--danger-color-dark);
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-  .product-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-.card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--primary-hover);
-  padding: 1rem 1.5rem;
-  margin-bottom: 20px;
   border-radius: 8px;
 }
-
-.card-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
 }
-
-.card-text h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--color-white);
+.product-card p {
+  color: #555;
+  font-size: 0.9em;
 }
-
-.card-filters {
-  display: flex;
-  gap: 0.5rem;
+.product-card .price {
+  font-weight: bold;
+  color: #e44d26;
+  font-size: 1.1em;
 }
-
-/* Filtros */
-.product-filters {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-.filter-category,
-.sort-products {
-  padding: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  background-color: white;
-}
-
-/* Badges */
-.product-badge.sale {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: var(--success-color);
-  color: white;
-  border-radius: 5px;
-  font-size: 12px;
-}
-
-/* Paginación */
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

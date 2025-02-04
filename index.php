@@ -1,7 +1,15 @@
 <?php
-// Incluir el archivo del router
-require_once '../SmartStockManager-ADSO/config/router.php';
+// Incluir el controlador
+require_once './app/controllers/pageController.php';
 
-// Crear una instancia del router
-$router = new Router();
-$router->run();
+$action = isset($_GET['action']) ? $_GET['action'] : 'landing';
+
+// Crear instancia del controlador y llamar a la acción
+$controller = new pageController();
+
+//condicion en caso de no encontrar 
+if (method_exists($controller, $action)) {
+    $controller->{$action}();
+} else {
+    require_once './app/views/auth/error.php';
+}

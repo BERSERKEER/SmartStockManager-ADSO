@@ -1,17 +1,22 @@
 <?php
-// controllers/pageController.php
 
 class pageController
 {
     public function home()
     {
-        // Cargar la vista 'home'
-        require_once(__DIR__ . '../../views/auth/login.php');
+        // Cargar la vista 'dashboard' ubicada en la carpeta 'admin'
+        $this->render('landing', 'auth');
     }
 
-    public function recoverX()
+    public function test()
     {
-        // Cargar la vista 'home'
-        require_once(__DIR__ . '../../views/auth/account_recovery_page.php');
+        // Cargar la vista 'dashboard' ubicada en la carpeta 'admin'
+        $this->render('index', 'auth');
+    }
+    // Función para cargar una vista especificando la carpeta
+    private function render($view, $folder = 'admin')
+    {
+        // Asegúrate de que la ruta corresponda con la estructura real del proyecto
+        require "app/views/{$folder}/{$view}.php";
     }
 }

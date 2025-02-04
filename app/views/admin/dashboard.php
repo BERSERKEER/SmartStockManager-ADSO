@@ -16,8 +16,8 @@
 </head>
 
 <body>
-    <?php include '../../../app/views/shared/aside.php'; ?>
-    <?php include '../../../app/views/shared/header.php'; ?>
+    <?php include '../shared/aside.php'; ?>
+    <?php include '../shared/header.php'; ?>
     <main>
         <div class="welcome-container">
             <div class="welcome-content">

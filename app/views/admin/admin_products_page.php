@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración de Productos</title>
-    <!-- Estilos -->
     <link rel="stylesheet" href="../../../public/css/admin_product_style.css">
     <link rel="stylesheet" href="../../../public/css/normalize.css">
     <link rel="icon" href="../../../public/images/short_logo.png">
@@ -20,88 +19,71 @@
 
     <!-- Contenido Principal -->
     <main>
-        <div class="card">
-            <div class="card-content">
-                <!-- Texto a la izquierda -->
-                <div class="card-text">
-                    <h2>Gestión de Productos</h2>
+        <div class="container">
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>$53,000</h3>
+                        <p>Today's Money <span class="positive">+55%</span></p>
+                    </div>
+                    <img src="../../../public/images/icon/icon-shopping-cart.svg" alt="coins" class="iconbox iconb1">
                 </div>
-                <a href="">Añadir</a>
-                <!-- Filtros a la derecha -->
-                <select class="sort-products">
-                    <option value="default">Ordenar por...</option>
-                    <option value="price-low-high">Precio: Menor a Mayor</option>
-                    <option value="price-high-low">Precio: Mayor a Menor</option>
-                    <option value="newest">Más reciente</option>
-                </select>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>2,300</h3>
+                        <p>Today's Users <span class="positive">+5%</span></p>
+                    </div>
+                    <img src="../../../public/images/icon/icon_groups.svg" alt="coins" class="iconbox iconb1">
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>+3,020</h3>
+                        <p>New Clients <span class="negative">-14%</span></p>
+                    </div>
+                    <img src="../../../public/images/icon/icon-person.svg" alt="coins" class="iconbox iconb1">
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>$173,000</h3>
+                        <p>Total Sales <span class="positive">+8%</span></p>
+                    </div>
+                    <img src="../../../public/images/icon/icon_money.svg" alt="coins" class="iconbox iconb1">
+                </div>
             </div>
         </div>
 
-        <section class="product-grid">
+        <!--Base-->
+        <div class="welcome-section">
+            <h3>Welcome back, Mark Johnson</h3>
+            <p>Glad to see you again!</p>
+            <a href="#" class="enlace-con-imagen"> Tab to record
+                <img src="../../../public/images/icon/icon-arrow-forward.svg" alt="Icono">
+            </a>
+        </div>
+
+        <div class="grid-container">
+            <!-- Tarjetas de productos -->
             <div class="product-card">
-                <img src="../../../public/images/icon/icon-settings.svg" alt="Producto 1">
+                <img src="https://via.placeholder.com/150" alt="Producto">
                 <h3>Producto 1</h3>
-                <p class="product-category">Categoría: Electrónica</p>
-                <p>Inventario: 50 unidades</p>
-                <p class="product-price">$20.00</p>
-                <span class="product-badge sale">En oferta</span>
-                <button class="edit-btn">Editar</button>
-                <button class="delete-btn">Eliminar</button>
+                <p>Descripción breve del producto.</p>
+                <p class="price">$19.99</p>
             </div>
-            <!-- Más tarjetas... -->
-
             <div class="product-card">
-                <img src="../../../public/images/product1.jpg" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p class="product-category">Categoría: Electrónica</p>
-                <p>Inventario: 50 unidades</p>
-                <p class="product-price">$20.00</p>
-                <span class="product-badge sale">En oferta</span>
-                <button class="edit-btn">Editar</button>
-                <button class="delete-btn">Eliminar</button>
+                <img src="https://via.placeholder.com/150" alt="Producto">
+                <h3>Producto 2</h3>
+                <p>Descripción breve del producto.</p>
+                <p class="price">$24.99</p>
             </div>
-
             <div class="product-card">
-                <img src="../../../public/images/product1.jpg" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p class="product-category">Categoría: Electrónica</p>
-                <p>Inventario: 50 unidades</p>
-                <p class="product-price">$20.00</p>
-                <span class="product-badge sale">En oferta</span>
-                <button class="edit-btn">Editar</button>
-                <button class="delete-btn">Eliminar</button>
+                <img src="https://via.placeholder.com/150" alt="Producto">
+                <h3>Producto 3</h3>
+                <p>Descripción breve del producto.</p>
+                <p class="price">$29.99</p>
             </div>
+            <!-- Agrega más tarjetas hasta completar 18 -->
 
-
-            <div class="product-card">
-                <img src="../../../public/images/product1.jpg" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p class="product-category">Categoría: Electrónica</p>
-                <p>Inventario: 50 unidades</p>
-                <p class="product-price">$20.00</p>
-                <span class="product-badge sale">En oferta</span>
-                <button class="edit-btn">Editar</button>
-                <button class="delete-btn">Eliminar</button>
-            </div>
-
-
-            <div class="product-card">
-                <img src="../../../public/images/product1.jpg" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p class="product-category">Categoría: Electrónica</p>
-                <p>Inventario: 50 unidades</p>
-                <p class="product-price">$20.00</p>
-                <span class="product-badge sale">En oferta</span>
-                <button class="edit-btn">Editar</button>
-                <button class="delete-btn">Eliminar</button>
-            </div>
-        </section>
-
-        <nav class="pagination">
-            <button class="prev-page">Anterior</button>
-            <span>Página <span class="current-page">1</span> de <span class="total-pages">5</span></span>
-            <button class="next-page">Siguiente</button>
-        </nav>
+        </div>
     </main>
 </body>
 
