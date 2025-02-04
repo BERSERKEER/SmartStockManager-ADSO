@@ -9,17 +9,6 @@
 </head>
 
 <body>
-    <?php
-    include('../../../config/database.php');
-    $sql = "SELECT * FROM user";
-    $result = mysqli_query($conexion, $sql);
-    $nombre = 'Usuario';
-    if ($result && mysqli_num_rows($result) > 0) {
-        $mostrar = mysqli_fetch_array($result);
-        $nombre = $mostrar['nombre'];
-    }
-    ?>
-
     <header>
         <!-- Barra de búsqueda -->
         <div class="search-bar">
@@ -37,7 +26,7 @@
                     <div class="sub-menu">
                         <div class="user-info">
                             <img src="../../../public/images/icon/icon-person.svg" alt="User">
-                            <h3><?php echo htmlspecialchars($nombre); ?></h3>
+                            <h3>Nombre usuario</h3>
                         </div>
                         <hr>
                         <a href="#" class="sub-menu-link">

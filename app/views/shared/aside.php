@@ -23,19 +23,19 @@
                 <h3>Panel de Control</h3>
                 <ul>
                     <li>
-                        <a href="../admin/admin_home_page.php">
+                        <a href="../admin/admin_home_page.php" class="aside-btn">
                             <img src="../../../public/images/icon/icon-home.svg" alt="" class="icon">
                             Inicio
                         </a>
                     </li>
                     <li>
-                        <a href="../admin/admin_users_page.php">
+                        <a href="../admin/admin_users_page.php" class="aside-btn">
                             <img src="../../../public/images/icon/icon-manage-users.svg" alt="" class="icon">
                             Gestión de Usuarios
                         </a>
                     </li>
                     <li>
-                        <a href="../admin/admin_settings_page.php">
+                        <a href="../admin/admin_settings_page.php" class="aside-btn">
                             <img src="../../../public/images/icon/icon-settings.svg" alt="" class="icon">
                             Configuración
                         </a>
@@ -47,15 +47,15 @@
                 <h3>Estadísticas</h3>
                 <ul>
                     <li>
-                        <a href="../admin/admin_report_page.php">
+                        <a href="../admin/admin_report_page.php" class="aside-btn">
                             <img src="../../../public/images/icon/icon-table.svg" alt="" class="icon">
                             Informes de Ingresos
                         </a>
                     </li>
                     <li>
-                        <a href="../admin/admin_products_page.php">
+                        <a href="../admin/admin_products_page.php" class="aside-btn">
                             <img src="../../../public/images/icon/icon-shopping-cart.svg" alt="" class="icon">
-                            productos
+                            Productos
                         </a>
                     </li>
                 </ul>
@@ -65,9 +65,9 @@
                 <h3>Accesos Rápidos</h3>
                 <ul>
                     <li>
-                        <a href="/config/log_out.php">
+                        <a href="/config/log_out.php" class="aside-btn">
                             <img src="../../../public/images/icon/icon-logout.svg" alt="" class="icon">
-                            Cerrar sesion
+                            Cerrar sesión
                         </a>
                     </li>
                 </ul>

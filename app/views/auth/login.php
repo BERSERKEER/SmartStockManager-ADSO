@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/login_style.css?v=1.0">
-    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/root.css?v=1.0">
-    <link rel="icon" href="../../../public/images/short_logo.png">
-    <!-- Librerías -->
-    <link rel="stylesheet" href="../../../public/css/normalize.css">
+    <!-- Ruta de Estilos -->
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/login_style.css">
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/root.css">
+    <link rel="icon" href="/SmartStockManager-ADSO/public/images/short_logo.png">
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
 </head>
 
 <body>
     <main class="auth-container">
-        <!-- Contenedor de logo -->
         <div class="logo-container">
-            <img src="../../../public/images/large_logo.png" alt="Logo" />
+            <img src="/public/images/large_logo.png" alt="Logo" />
         </div>
 
         <!-- Formulario de inicio de sesión -->
-        <form class="login-form" action="./config/validate.php" method="POST">
+        <form class="login-form" action="_functions.php" method="POST">
             <!-- Mostrar mensaje de error si existe -->
             <?php
             session_start();
@@ -52,7 +50,7 @@
                     type="password"
                     class="form-input"
                     id="password"
-                    name="contraseña"
+                    name="password"
                     required
                     placeholder=" ">
                 <label class="input-label" for="password">Contraseña</label>
@@ -63,7 +61,7 @@
 
             <!-- Enlace de recuperación de contraseña -->
             <div class="form-link">
-                <a href="../../../app/views/auth/account_recovery_page.php">Olvidé mi contraseña</a>
+                <a href="./app/views/auth/account_recovery_page.php">Olvidé mi contraseña</a>
             </div>
         </form>
     </main>
