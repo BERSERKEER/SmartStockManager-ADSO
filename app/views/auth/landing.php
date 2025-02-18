@@ -8,14 +8,15 @@
     <!-- Ruta de Estilos -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css" />
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/landing_style.css" />
-    <!--<link rel="stylesheet" href="/SmartStockManager-ADSO/public/images/short_logo.png" />-->
+    <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
+    <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
     <!--Barra de navegacion-->
     <nav class="navbar">
         <div class="logo" id="Home">
-            <img src="./public/images/short_logo.png" alt="Logo">
+            <img src="./public/images/short_lg-light.png" alt="Logo">
             <h2>SmartStockManager</h2>
         </div>
         <ul class="nav-links" id="nav-links">
@@ -165,8 +166,8 @@
                 <div class="footer-social">
                     <h3>Síguenos</h3>
                     <a href="https://www.facebook.com/" target="_blank"><img src="./public/images/icon/icon_facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.x.com/" target="_blank"><img src="./public/images/icon/icon_twitterx.svg" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="./public/images/icon/icon_insta.svg" alt="Instagram"></a>
+                    <a href="https://www.x.com/" target="_blank"><img src="./public/images/icon/icon_x.svg" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="./public/images/icon/icon_instagram.svg" alt="Instagram"></a>
                 </div>
 
                 <!-- Enlaces rápidos -->

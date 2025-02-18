@@ -19,7 +19,7 @@
         </div>
 
         <!-- Formulario de inicio de sesión -->
-        <form class="login-form" action="_functions.php" method="POST">
+        <form class="login-form" action="/core/" method="POST">
             <!-- Mostrar mensaje de error si existe -->
             <?php
             session_start();
