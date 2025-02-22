@@ -3,25 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="vi ewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
-    <!-- Ruta de librerias-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Reportes</title>
+    <!-- Libreries -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Ruta de estilos -->
-    <link rel="stylesheet" href="../../../public/css/admin_dashboard.css">
-    <link rel="icon" href="../../../public/images/short_logo.png">
-    <!--Rutas de js-->
-    <script src="../../../public/js/admin_functions.js" defer></script>
+    <!-- Routes CSS Styles -->
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
+    <!-- Routes JS -->
+    <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
-    <!-- Incluyendo la barra lateral -->
-    <?php include '../../../app/views/shared/aside.php'; ?>
-
-    <!-- Incluyendo el header -->
-    <?php include '../../../app/views/shared/header.php'; ?>
-
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
     <!-- Contenido Principal -->
     <main class="dashboard-main">
         <div class="card card-2">
@@ -136,10 +131,6 @@
             }
         });
     </script>
-
-    <!--Pie de pagina-->
-    <?php include '../../../app/views/shared/footer.php'; ?>
-
 </body>
 
 </html>

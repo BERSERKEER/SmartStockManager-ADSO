@@ -11,5 +11,7 @@ $controller = new pageController();
 if (method_exists($controller, $action)) {
     $controller->{$action}();
 } else {
-    require_once './app/views/auth/error.php';
+    require_once './app/views/auth/landing.php';
 }
+
+//    require_once './app/views/auth/error.php';

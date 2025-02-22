@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Productos</title>
-    <link rel="stylesheet" href="../../../public/css/admin_product_style.css">
-    <link rel="stylesheet" href="../../../public/css/normalize.css">
-    <link rel="icon" href="../../../public/images/short_logo.png">
+    <title>Dashboard - productos</title>
+    <!-- Libreries -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Routes CSS Styles -->
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
+    <!-- Routes JS -->
+    <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
-    <!-- Incluyendo la barra lateral -->
-    <?php include '../../../app/views/shared/aside.php'; ?>
-
-    <!-- Incluyendo el header -->
-    <?php include '../../../app/views/shared/header.php'; ?>
-
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
     <!-- Contenido Principal -->
     <main>
         <div class="container">
@@ -52,38 +52,107 @@
             </div>
         </div>
 
-        <!--Base-->
-        <div class="welcome-section">
-            <h3>Welcome back, Mark Johnson</h3>
-            <p>Glad to see you again!</p>
-            <a href="#" class="enlace-con-imagen"> Tab to record
-                <img src="../../../public/images/icon/icon-arrow-forward.svg" alt="Icono">
-            </a>
+        <div class="container">
+            <!-- Barra de búsqueda y filtros -->
+            <h1>Productos</h1>
+            <div class="search-filter-container">
+                <!-- Barra de búsqueda -->
+
+                <input type="text" id="search-bar" placeholder="Buscar..." />
+                <button id="search-btn">Buscar</button>
+
+                <!-- Categorías -->
+                <select id="category-filter">
+                    <option value="all">Todas las categorías</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="usuarios">Usuarios</option>
+                    <option value="clientes">Clientes</option>
+                    <option value="productos">Productos</option>
+                </select>
+
+                <!-- Filtros -->
+                <select id="sort-filter">
+                    <option value="recientes">Más recientes</option>
+                    <option value="populares">Más populares</option>
+                    <option value="mayor-precio">Mayor precio</option>
+                    <option value="menor-precio">Menor precio</option>
+                </select>
+
+                <div class="icon-container">
+                    <a href="">
+                        <img src="facebook-icon.png" alt="" class="icon">
+                    </a>
+                    <a href="./SmartStockManager-ADSO/public/images/icon/icon-clould.svg">
+                        <img src="twitter-icon.png" alt="" class="icon">
+                    </a>
+                    <a href="../../../public/images/icon/icon-clould.svg">
+                        <img src="instagram-icon.png" alt="" class="icon">
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="grid-container">
-            <!-- Tarjetas de productos -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Producto">
-                <h3>Producto 1</h3>
-                <p>Descripción breve del producto.</p>
-                <p class="price">$19.99</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Producto">
-                <h3>Producto 2</h3>
-                <p>Descripción breve del producto.</p>
-                <p class="price">$24.99</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" alt="Producto">
-                <h3>Producto 3</h3>
-                <p>Descripción breve del producto.</p>
-                <p class="price">$29.99</p>
-            </div>
-            <!-- Agrega más tarjetas hasta completar 18 -->
+        <div class="container">
+            <div class="product-grid">
+                <!-- Tarjeta de Producto -->
+                <div class="product-card">
+                    <img src="/ruta-del-producto.jpg" alt="Producto" class="product-img">
+                    <div class="product-info">
+                        <h3>Nombre del Producto</h3>
+                        <p>Descripción corta del producto.</p>
+                        <span class="price">$99.99</span>
+                        <span class="stock">Stock: 15</span>
+                        <div class="product-actions">
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="product-card">
+                    <img src="/ruta-del-producto.jpg" alt="Producto" class="product-img">
+                    <div class="product-info">
+                        <h3>Producto 2</h3>
+                        <p>Otra descripción.</p>
+                        <span class="price">$59.99</span>
+                        <span class="stock">Stock: 30</span>
+                        <div class="product-actions">
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/ruta-del-producto.jpg" alt="Producto" class="product-img">
+                    <div class="product-info">
+                        <h3>Producto 2</h3>
+                        <p>Otra descripción.</p>
+                        <span class="price">$59.99</span>
+                        <span class="stock">Stock: 30</span>
+                        <div class="product-actions">
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/ruta-del-producto.jpg" alt="Producto" class="product-img">
+                    <div class="product-info">
+                        <h3>Producto 2</h3>
+                        <p>Otra descripción.</p>
+                        <span class="price">$59.99</span>
+                        <span class="stock">Stock: 30</span>
+                        <div class="product-actions">
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </main>
 </body>
 

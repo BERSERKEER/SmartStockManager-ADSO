@@ -5,21 +5,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Recuperación de cuenta</title>
-	<!-- Estilos -->
-	<link rel="icon" href="../../../public/images/short_logo.png">
+	<!-- Routes CSS Styles -->
+	<link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
 	<link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/login_style.css?v=1.0">
-	<!-- Librerías -->
+	<!-- Frameworks -->
 	<link rel="stylesheet" href="../../../public/css/normalize.css">
-	<!-- Scripts -->
+	<!--Routes JS-->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="/SmartStockManager-ADSO/public/js/index.js" defer></script>
+	<script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
 	<main class="auth-container">
 		<!-- Contenedor del logo -->
 		<div class="logo-container">
-			<img src="../../../public/images/large_logo.png" alt="Logo" />
+			<img src="/SmartStockManager-ADSO/public/images/large_lg-light.png" alt="Logo" />
 		</div>
 
 		<!-- Formulario de recuperación -->
@@ -45,7 +46,6 @@
 				Enviar
 			</button>
 
-			<!-- Enlace para redirigir al inicio de sesión -->
 			<div class="form-link">
 				<a href="./login.php">Ya tengo mi cuenta</a>
 			</div>
