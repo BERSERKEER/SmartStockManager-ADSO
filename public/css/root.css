@@ -1,42 +1,22 @@
 :root {
-  --text-muted: #99a0b0;
-  --background-light: #f5f5fa;
-  --color-white: #fff;
-  --color-smooth-white: #ede8f0;
-  --text-dark: #1b253d;
-  --primary: #4b84fe;
-  --primary-hover: #1861fe;
-  --primary-active: #0149e2;
-  --border-light: #ede8f0;
-  --text-secondary: #b6bbc6;
-  --background-dark: #2b3a60;
-  --danger: #fa5b67;
-  --warning: #ffbb09;
-  --Transparent-grey-color: #f4f4f447;
-  --color-red: #d33131;
-  --color-green: #2bb15c;
-  --color-black: #1b1b1b;
-  --color-black-hover: #555;
-  --effect-transition-button: 0.3s;
+  --base-clr: #11121a; /* Fondo principal */
+  --line-clr: #42434a; /* Bordes y líneas separadoras */
+  --hover-clr: #222533; /* Fondos en hover */
+  --text-clr: #e6e6ef; /* Texto principal */
+  --accent-clr: #5257fc; /* Color de acento */
+  --secondary-text-clr: #b0b3c1; /* Texto secundario */
 
-  /* Escala tipográfica */
-  --font-size-xxl: 2rem;
-  --font-size-xl: 1.5rem;
-  --font-size-lg: 1.25rem;
-  --font-size-md: 1rem;
-  --font-size-sm: 0.875rem;
-  --font-size-xs: 0.75rem;
+  /* Nuevos colores */
+  --success-clr: #4caf50; /* Éxito */
+  --error-clr: #ff6b6b; /* Error */
+  --warning-clr: #ffa726; /* Advertencia */
+  --alt-bg-clr: #1b1d2a; /* Fondo alternativo */
+  --hover-accent-clr: #7a80ff; /* Hover para elementos destacados */
 
-  /* Líneas de altura */
-  --line-height-xxl: 2.5rem;
-  --line-height-xl: 2rem;
-  --line-height-lg: 1.75rem;
-  --line-height-md: 1.5rem;
-  --line-height-sm: 1.25rem;
+  /*Size icon*/
+  --icon-height: ;
+  --icon-weight: ;
 
-  /* Fuentes */
-  --font-main: Arial, sans-serif;
-
-  /* Bordes */
-  --radius-border: 6px;
+  /**/
+  --radius-size: 1em;
 }

@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No encontrado</title>
-    <!--Rutas de estilos-->
+    <!-- Routes CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/error_style.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
-    <link rel="icon" href="/SmartStockManager-ADSO/public/images/short_logo.png">
+    <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
+    <!--Routes JS-->
+    <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>

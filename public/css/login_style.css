@@ -1,20 +1,28 @@
 @import url(root.css);
+
+html {
+  font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+
 body {
-  background-color: var(--background-light);
   font-family: var(--font-main);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--base-clr);
+  color: var(--text-clr);
 }
 
 .auth-container {
   padding: 40px;
   border-radius: var(--radius-border);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
-  background-color: var(--color-white);
+  border: 1px solid var(--line-clr);
+  border-radius: 1em;
+  background-color: var(--alt-bg-clr);
 }
 
 .logo-container {
@@ -23,7 +31,7 @@ body {
 }
 
 .logo-container img {
-  width: 100%;
+  width: 70%;
   display: block;
 }
 
@@ -31,21 +39,21 @@ body {
   width: 100%;
   padding: 10px;
   border: none;
-  text-decoration: none;
   border-radius: var(--radius-border);
   font-size: 16px;
   cursor: pointer;
-  transition-duration: 0.4s;
+  transition: background 0.3s ease;
   margin-top: 10px;
+  text-align: center;
 }
 
 .btn-primary {
-  background-color: var(--primary-hover);
-  color: var(--color-white);
+  background-color: var(--accent-clr);
+  color: #fff;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-active);
+  background-color: var(--hover-accent-clr);
 }
 
 .form-link {
@@ -55,18 +63,21 @@ body {
 }
 
 .form-link a {
-  color: var(--primary-hover);
+  color: var(--accent-clr);
   text-decoration: none;
   font-size: 14px;
 }
 
 .form-link a:hover {
-  color: var(--background-dark);
+  color: var(--hover-accent-clr);
 }
 
 .form-error {
-  color: var(--danger);
-  text-align: left;
+  background-color: var(--error-clr);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -87,22 +98,81 @@ body {
   width: 100%;
   box-sizing: border-box;
   outline: none;
-  border: 1px solid #dddfe2;
+  border: 1px solid var(--line-clr);
+  background-color: transparent;
+  color: var(--text-clr);
+  border-radius: var(--radius-border);
+}
+
+.form-input:focus {
+  border-color: var(--accent-clr);
 }
 
 .input-label {
   position: absolute;
   top: 10px;
-  left: 8px;
+  left: 12px;
   font-size: 14px;
-  padding: 0 5px;
-  color: #a6a6a6;
+  color: var(--secondary-text-clr);
   transition: 0.3s;
   pointer-events: none;
+  background-color: var(--alt-bg-clr);
+  padding: 0 5px;
 }
 
 .form-input:focus + .input-label,
 .form-input:not(:placeholder-shown) + .input-label {
   top: -10px;
-  background-color: var(--color-white);
+  color: var(--accent-clr);
+}
+
+/*Responsive Design*/
+@media screen and (max-width: 768px) {
+  .auth-container {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  .form-input {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth-container {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .logo-container img {
+    max-width: 80%;
+  }
+
+  .login-form {
+    padding: 15px;
+  }
+
+  .form-input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .form-link {
+    justify-content: center;
+    text-align: center;
+  }
 }

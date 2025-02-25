@@ -1,109 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuraciones</title>
-    <!-- Ruta de librerías -->
+    <!-- Librerías -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Ruta de estilos -->
-    <link rel="stylesheet" href="../../../public/css/admin_settings_style.css">
-    <link rel="stylesheet" href="../../../public/css/normalize.css">
-    <link rel="icon" href="../../../public/images/short_logo.png">
+    <!-- Rutas CSS -->
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
+    <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
+    <!-- Rutas JS -->
+    <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
-    <?php include '../../../app/views/shared/aside.php'; ?>
-    <?php include '../../../app/views/shared/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
 
     <main>
-        <section class="banner">
-            <div class="user-info">
-                <img src="../../../public/images/icon/icon-person.svg" alt="Avatar del Usuario">
-                <div class="details">
-                    <h3>John Doe</h3>
-                    <p>john.doe@example.com</p>
-                </div>
-            </div>
-            <div class="welcome-message">
-                <p>¡Bienvenido de nuevo, John!</p>
-            </div>
-        </section>
+        <div class="container">
+            <h2>
+                <img src="/SmartStockManager-ADSO/public/images/config-general.png" alt="Configuración General" width="30">
+                Configuración General
+            </h2>
+            <p>Administra la configuración principal del sistema, como idioma y zona horaria.</p>
 
-        <!-- Ajustes de cuenta -->
-        <section class="preferences-section">
-            <h2>Ajustes de Cuenta</h2>
-            <form action="#">
-                <div>
-                    <label for="username">Nombres</label>
-                    <input type="text" id="username" name="username" value="John Doe">
+            <form class="config-form">
+                <div class="form-group">
+                    <label for="company-name">Nombre de la Empresa</label>
+                    <input type="text" id="company-name" name="company-name" placeholder="Ingrese el nombre">
                 </div>
-                <div>
-                    <label for="username">Apellidos</label>
-                    <input type="text" id="username" name="username" value="John Doe">
-                </div>
-                <div>
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" value="john.doe@example.com">
-                </div>
-                <div>
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" value="******">
-                </div>
-                <div>
-                    <label for="password">Confirmar contraseña</label>
-                    <input type="password" id="password" name="password" value="******">
-                </div>
-                <button type="submit">Guardar Cambios</button>
-            </form>
-        </section>
 
-        <!-- Preferencias del sistema -->
-        <section class="preferences-section">
-            <h2>Preferencias del Sistema</h2>
-            <form action="#">
-                <div>
-                    <label for="theme">Tema</label>
-                    <select id="theme" name="theme">
-                        <option value="light">Claro</option>
-                        <option value="dark">Oscuro</option>
+                <div class="form-group">
+                    <label for="company-phone">Teléfono</label>
+                    <input type="tel" id="company-phone" name="company-phone" placeholder="Ingrese el teléfono">
+                </div>
+
+                <div class="form-group">
+                    <label for="company-address">Dirección</label>
+                    <input type="text" id="company-address" name="company-address" placeholder="Ingrese la dirección">
+                </div>
+
+                <div class="form-group">
+                    <label for="company-nit">NIT / Identificación Fiscal</label>
+                    <input type="text" id="company-nit" name="company-nit" placeholder="Ingrese el NIT">
+                </div>
+
+                <div class="form-group">
+                    <label for="company-email">Correo Electrónico</label>
+                    <input type="email" id="company-email" name="company-email" placeholder="Ingrese el correo">
+                </div>
+
+                <div class="form-group">
+                    <label for="company-timezone">Zona Horaria</label>
+                    <select id="company-timezone" name="company-timezone">
+                        <option value="GMT-5">GMT -5 (Colombia, Perú, Ecuador)</option>
+                        <option value="GMT-6">GMT -6 (México, Costa Rica)</option>
+                        <option value="GMT-3">GMT -3 (Argentina, Chile)</option>
                     </select>
                 </div>
-                <div>
-                    <label for="notifications">Notificaciones</label>
-                    <input type="checkbox" id="notifications" name="notifications" checked> Habilitar Notificaciones
-                </div>
-                <button type="submit">Guardar Preferencias</button>
             </form>
-        </section>
+        </div>
 
-        <!-- Seguridad -->
-        <section class="security-section">
-            <h2>Seguridad</h2>
-            <form action="#">
-                <div>
-                    <label for="two-factor">Autenticación de Dos Factores</label>
-                    <input type="checkbox" id="two-factor" name="two-factor"> Habilitar
-                </div>
-                <button type="submit">Guardar Seguridad</button>
-            </form>
-        </section>
+        <div class="container">
+            <h2>
+                <img src="/SmartStockManager-ADSO/public/images/apariencia.png" alt="Apariencia" width="30">
+                Apariencia
+            </h2>
+            <p>Personaliza el tema del sistema, cambia los colores y la tipografía.</p>
 
-        <!-- API -->
-        <section class="api-section">
-            <h2>API Configuración</h2>
-            <form action="#">
-                <div>
-                    <label for="api-key">Clave de API</label>
-                    <input type="text" id="api-key" name="api-key" value="sk_test_XXXXXXXXXXXXXXXXX">
+            <form class="config-form">
+                <!-- Selector de Tema -->
+                <div class="form-group">
+                    <label for="theme">Tema del Sistema</label>
+                    <select id="theme">
+                        <option value="light">Claro</option>
+                        <option value="dark">Oscuro</option>
+                        <option value="custom">Personalizado</option>
+                    </select>
                 </div>
-                <button type="submit">Actualizar API</button>
+
+                <!-- Tamaño de Fuente -->
+                <div class="form-group">
+                    <label for="font-size">Tamaño de Fuente</label>
+                    <input type="range" id="font-size" min="12" max="24" value="16">
+                    <span id="font-size-value">16px</span>
+                </div>
             </form>
-        </section>
+        </div>
+
+        <div class="container">
+            <h2>
+                <img src="/SmartStockManager-ADSO/public/images/notificaciones.png" alt="Notificaciones" width="30">
+                Notificaciones
+            </h2>
+            <p>Configura cómo recibir alertas sobre actividades y eventos importantes.</p>
+            <button class="btn-config">Administrar Notificaciones</button>
+        </div>
+
+        <div class="container">
+            <h2>
+                <img src="/SmartStockManager-ADSO/public/images/seguridad.png" alt="Seguridad" width="30">
+                Seguridad
+            </h2>
+            <p>Administra la seguridad de tu cuenta, contraseñas y permisos.</p>
+
+            <form class="config-form">
+                <!-- Cambio de Contraseña -->
+                <div class="form-group">
+                    <label for="current-password">Contraseña Actual</label>
+                    <input type="password" id="current-password" placeholder="Ingresa tu contraseña actual">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-password">Nueva Contraseña</label>
+                    <input type="password" id="new-password" placeholder="Ingresa la nueva contraseña">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Nueva Contraseña</label>
+                    <input type="password" id="confirm-password" placeholder="Repite la nueva contraseña">
+                </div>
+
+                <!-- Activar Autenticación en Dos Pasos -->
+                <div class="form-group">
+                    <label for="enable-2fa">Autenticación en Dos Pasos (2FA)</label>
+                    <select id="enable-2fa">
+                        <option value="disabled">Desactivado</option>
+                        <option value="sms">SMS</option>
+                        <option value="email">Correo Electrónico</option>
+                        <option value="authenticator">App Autenticadora</option>
+                    </select>
+                </div>
+
+                <!-- Sesiones Activas -->
+                <div class="form-group">
+                    <label>Sesiones Activas</label>
+                    <ul class="session-list">
+                        <li>📍 Dispositivo: Windows PC - Ubicación: Colombia <button class="btn-logout">Cerrar Sesión</button></li>
+                        <li>📍 Dispositivo: iPhone - Ubicación: México <button class="btn-logout">Cerrar Sesión</button></li>
+                    </ul>
+                </div>
+
+                <!-- Gestión de Permisos -->
+                <div class="form-group">
+                    <label for="user-role">Rol de Usuario</label>
+                    <select id="user-role">
+                        <option value="admin">Administrador</option>
+                        <option value="editor">Editor</option>
+                        <option value="viewer">Solo Lectura</option>
+                    </select>
+                </div>
+            </form>
+        </div>
     </main>
-
-    <?php include '../../../app/views/shared/footer.php'; ?>
 </body>
 
 </html>

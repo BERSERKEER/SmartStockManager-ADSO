@@ -1,10 +1,10 @@
 <?php
+require_once '../app/core/controller.php';
 
-class HomeController
+class HomeController extends Controller
 {
     public function index()
     {
-        // Cargar la vista y pasar los datos
-        require_once './app/views/auth/landing.php';
+        $this->view('home');
     }
 }
