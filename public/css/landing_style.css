@@ -3,11 +3,11 @@
 html {
   scroll-padding: 20px;
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;

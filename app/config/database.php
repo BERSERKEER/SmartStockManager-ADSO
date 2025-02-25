@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "register_users";
+$dbname = "db_ssm";
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -1,23 +1,28 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "register_users");
+session_start();
+require_once '../config/database.php';
 
-// Verifica si se envió el formulario
-if (isset($_POST['registrar'])) {
-    $nombre = $_POST['nombre'];
-    $correo = $_POST['correo'];
-    //$telefono = $_POST['telefono'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Encriptar contraseña
-    // $fecha = $_POST['fecha'];
-    $rol = $_POST['rol'];
+function autenticarUsuario($correo, $password, $conn)
+{
+    $result = $conn->query("SELECT nombre, rol FROM user WHERE correo = '$correo' AND password = '$password'");
 
-    // Consulta SQL para insertar datos
-    $consulta = "INSERT INTO empleados (nombre, correo, password, telefono, fecha, rol) 
-                 VALUES ('$nombre', '$correo', '$password', '$telefono', '$fecha', '$rol')";
+    if ($result->num_rows > 0) {
+        $usuario = $result->fetch_assoc();
+        $_SESSION['user'] = $usuario['nombre'];
 
-    // Ejecutar la consulta
-    if (mysqli_query($conexion, $consulta)) {
-        header("Location: index.php"); // Redirigir a otra página
+        // Redirigir dependiendo del rol
+        if ($usuario['rol'] == 1) {
+            header("Location: ../views/admin/admin_home_page.php");
+        } elseif ($usuario['rol'] == 2) {
+            header("Location: ../views/employeer/employ_home_page.php");
+        }
     } else {
-        echo "Error: " . mysqli_error($conexion);
+        header("Location: ../views/auth/login.php");
+        session_destroy();
     }
+
+    $conn->close();
+    exit();
 }
+
+autenticarUsuario($_POST['correo'] ?? '', $_POST['password'] ?? '', $conn);

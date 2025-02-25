@@ -7,7 +7,7 @@
     <title>Bienvenido</title>
     <!-- Libreries -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Routes CSS Styles -->
+    <!-- Routes CSS -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
     <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
@@ -15,7 +15,22 @@
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
-<!--../shared/sidebar.php'; -->
+<!--Search date-->
+<?php
+date_default_timezone_set('America/Bogota'); // Ajusta a tu zona horaria
+$hora = date('H');
+
+if ($hora >= 5 && $hora < 12) {
+    $saludo = "Buenos días";
+    $mensaje = "Es un nuevo comienzo, lleno de oportunidades para lograr tus objetivos.";
+} elseif ($hora >= 12 && $hora < 18) {
+    $saludo = "Buenas tardes";
+    $mensaje = "Sigue avanzando, cada esfuerzo que haces te acerca más a tus metas.";
+} else {
+    $saludo = "Buenas noches";
+    $mensaje = "El día está por terminar, pero aún hay tiempo para hacer la diferencia.";
+}
+?>
 
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
@@ -23,11 +38,9 @@
         <div class="container">
             <div class="welcome-container">
                 <div class="welcome-content">
-                    <h1>Bienvenido al Dashboard</h1>
-                    <p>Explora herramientas avanzadas para maximizar tu productividad.</p>
-                    <div class="welcome-buttons">
-                        <a href="../admin/admin_home.php" class="button" style="vertical-align:middle"><span>Iniciar </span></a>
-                    </div>
+                    <h1><?php echo $saludo; ?>, bienvenido al Dashboard</h1>
+                    <p><?php echo $mensaje; ?></p>
+                    <p>Button</p>
                 </div>
                 <div class="welcome-image">
                     <img src="/SmartStockManager-ADSO/public/images/render1.png" alt="Dashboard Image">

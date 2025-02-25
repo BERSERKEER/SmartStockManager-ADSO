@@ -1,12 +1,5 @@
 <?php
-session_start(); // Iniciar la sesión
-
-// Restablecer todas las variables de sesión
-$_SESSION = array();
-
-// Destruir la sesión
+session_start();
 session_destroy();
-
-// Redirigir a la página de inicio de sesión u otra página después de cerrar sesión
-header("location: /views/auth/login.php");
+header("Location: ../views/auth/login.php");
 exit();

@@ -12,4 +12,11 @@
   --warning-clr: #ffa726; /* Advertencia */
   --alt-bg-clr: #1b1d2a; /* Fondo alternativo */
   --hover-accent-clr: #7a80ff; /* Hover para elementos destacados */
+
+  /*Size icon*/
+  --icon-height: ;
+  --icon-weight: ;
+
+  /**/
+  --radius-size: 1em;
 }
