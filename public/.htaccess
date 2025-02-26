@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteBase /SmartStockManager-ADSO/public/
+RewriteBase /SmartStockManager-ADSO/public/ 
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

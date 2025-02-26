@@ -23,7 +23,7 @@
         <!--Mensaje de error_ -->
         <?php if (isset($_GET['error'])) echo "<p style='color:red;'>Usuario o contraseña incorrectos</p>"; ?>
 
-        <form class="login-form" action="../../config/validate.php" method="POST">
+        <form class="login-form" action="/app/config/validate.php" method="POST">
             <input type="hidden" name="action" value="login">
 
             <div class="form-field">

@@ -4,28 +4,28 @@ class Router
 {
     public function dispatch()
     {
-        // Obtiene la URL limpia
-        $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : 'home/index';
-        $url = explode('/', $url);
+        $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : 'home';
+        $url = explode("/", $url);
 
-        // Extrae controlador y método
-        $controllerName = ucfirst($url[0]) . "controller";
-        $method = isset($url[1]) ? $url[1] : 'index';
+        $controllerName = ucfirst(strtolower($url[0])) . "Controller";
+        $method = isset($url[1]) ? $url[1] : "index";
 
-        // Ruta del controlador
-        $controllerFile = "/app/controllers/{$controllerName}.php";
+        $controllerFile = "../app/controllers/$controllerName.php";
 
         if (file_exists($controllerFile)) {
             require_once $controllerFile;
             $controller = new $controllerName();
 
             if (method_exists($controller, $method)) {
-                $controller->{$method}();
+                $controller->$method();
+                return;
             } else {
-                echo "Error 404: Método '{$method}' no encontrado.";
+                echo "Error: Método '$method' no encontrado en $controllerName";
+                exit;
             }
         } else {
-            echo "Error 404: Controlador '{$controllerName}' no encontrado.";
+            echo "Error: Controlador '$controllerName' no encontrado";
+            exit;
         }
     }
 }

@@ -47,7 +47,7 @@
 			</button>
 
 			<div class="form-link">
-				<a href="./login.php">Ya tengo mi cuenta</a>
+				<a href="/SmartStockManager-ADSO/public/auth/login">Ya tengo mi cuenta</a>
 			</div>
 		</form>
 	</main>

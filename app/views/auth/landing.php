@@ -16,7 +16,7 @@
     <!--Barra de navegacion-->
     <nav class="navbar">
         <div class="logo" id="Home">
-            <img src="./public/images/short_lg-light.png" alt="Logo">
+            <img src="/SmartStockManager-ADSO/public/images/short_lg-dark.png" alt="Logo">
             <h2>SmartStockManager</h2>
         </div>
         <ul class="nav-links" id="nav-links">
@@ -25,7 +25,7 @@
             <li><a href="#Product">Productos</a></li>
             <li><a href="#Location">Ubicacion</a></li>
             <li><a href="#Contact">Contacto</a></li>
-            <li><a href="./app/views/auth/login.php" class="active">Ingresar</a></li>
+            <li><a href="/SmartStockManager-ADSO/public/auth/login" class="active">Ingresar</a></li>
         </ul>
         <div class="menu-icon" id="menu-icon">☰</div>
     </nav>
@@ -37,7 +37,7 @@
                 <h1>Bienvenido a nuestra página web</h1>
                 <p>Esta es una página web de ejemplo.</p>
                 <a href="#Product" class="button-add-icon">Ver productos
-                    <img src="./public/images/icon/icon-arrow-forward.svg" alt="Icono">
+                    <img src="/SmartStockManager-ADSO/public/images//icon/icon-arrow-forward.svg" alt="Icono">
                 </a>
             </div>
         </header>
@@ -63,17 +63,17 @@
             <!-- Contenedor de tarjetas -->
             <div class="services-container">
                 <div class="service-card">
-                    <img src="./public/images/icon/icon_add_shopping.svg" alt="Venta de Repuestos">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon_add_shopping.svg" alt="Venta de Repuestos">
                     <h3>Venta de Repuestos</h3>
                     <p>Ofrecemos una amplia gama de repuestos originales y alternativos.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./public/images/icon/icon_connect_without_contact.svg" alt="Asesoría Técnica">
+                    <img src="/SmartStockManager-ADSO/public/images//icon/icon_connect_without_contact.svg" alt="Asesoría Técnica">
                     <h3>Asesoría Técnica</h3>
                     <p>Nuestros expertos te guían en el mantenimiento y reparación de tu vehículo.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./public/images/icon/icon_engineering_install.svg" alt="Instalación Profesional">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon_engineering_install.svg" alt="Instalación Profesional">
                     <h3>Instalación Profesional</h3>
                     <p>Contamos con técnicos especializados para la instalación de piezas.</p>
                 </div>
@@ -88,32 +88,32 @@
             <!-- Contenedor de tarjetas -->
             <div class="product-container">
                 <div class="product-card">
-                    <img src="./public/images/icon/icon-settings.svg" alt="Filtro de Aceite">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Filtro de Aceite">
                     <h3>Filtro de Aceite</h3>
                     <p>Protege el motor de tu auto con nuestros filtros de aceite de alta calidad.</p>
                 </div>
                 <div class="product-card">
-                    <img src="./public/images/icon/icon-settings.svg" alt="Pastillas de Freno">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Pastillas de Freno">
                     <h3>Pastillas de Freno</h3>
                     <p>Pastillas de freno resistentes para una conducción segura y eficiente.</p>
                 </div>
                 <div class="product-card">
-                    <img src="./public/images/icon/icon-settings.svg" alt="Batería de Auto">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Batería de Auto">
                     <h3>Batería de Auto</h3>
                     <p>Baterías duraderas con alto rendimiento para todo tipo de vehículos.</p>
                 </div>
                 <div class="product-card">
-                    <img src="./public/images/icon/icon-settings.svg" alt="Bujías">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Bujías">
                     <h3>Bujías de Encendido</h3>
                     <p>Mejora el rendimiento de tu motor con nuestras bujías premium.</p>
                 </div>
                 <div class="product-card">
-                    <img src="./public/images/icon/icon-settings.svg" alt="Amortiguadores">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Amortiguadores">
                     <h3>Amortiguadores</h3>
                     <p>Amortiguadores de alta calidad para un viaje más estable y seguro.</p>
                 </div>
                 <div class="product-card">
-                    <img src="./public/images/icon/icon-settings.svg" alt="Neumáticos">
+                    <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Neumáticos">
                     <h3>Neumáticos</h3>
                     <p>Variedad de neumáticos resistentes y seguros para cualquier terreno.</p>
                 </div>
@@ -154,23 +154,18 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-container">
-                <!-- Información de contacto -->
                 <div class="footer-info">
                     <h3>Contacto</h3>
                     <p>📍 Calle 123, Ciudad, País</p>
                     <p>📞 +123 456 789</p>
                     <p>📧 contacto@empresa.com</p>
                 </div>
-
-                <!-- Redes Sociales -->
                 <div class="footer-social">
                     <h3>Síguenos</h3>
                     <a href="https://www.facebook.com/" target="_blank"><img src="./public/images/icon/icon_facebook.svg" alt="Facebook"></a>
                     <a href="https://www.x.com/" target="_blank"><img src="./public/images/icon/icon_x.svg" alt="Twitter"></a>
                     <a href="https://www.instagram.com/" target="_blank"><img src="./public/images/icon/icon_instagram.svg" alt="Instagram"></a>
                 </div>
-
-                <!-- Enlaces rápidos -->
                 <div class="footer-links">
                     <h3>Enlaces</h3>
                     <a href="#">Sobre Nosotros</a>
@@ -178,8 +173,6 @@
                     <a href="#">Términos y Condiciones</a>
                 </div>
             </div>
-
-            <!-- Derechos reservados -->
             <p class="footer-copy">&copy; 2024 Todos los derechos reservados.</p>
         </footer>
         <!--script resposivo nevigation menu-->
