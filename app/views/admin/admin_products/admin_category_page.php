@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - productos</title>
-    <!-- Libreries -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Routes CSS Styles -->
+    <title>Productos - categoria</title>
+    <!-- Libraries -->
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <!-- Favicon/images -->
     <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
-    <!-- Routes JS -->
+    <!-- JS Scripts -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
+    <!--Include componenet: Sidebar -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
     <main>
         <div class="container">
@@ -25,7 +26,7 @@
             <div class="search-filter-container">
                 <input type="text" id="search-bar" placeholder="Buscar..." />
                 <p>Button</p>
-                <!-- Categorías -->
+                <!-- Filter: Categorías -->
                 <select id="category-filter">
                     <option value="all">Todas las categorías</option>
                     <option value="ventas">Ventas</option>
@@ -34,7 +35,7 @@
                     <option value="productos">Productos</option>
                 </select>
 
-                <!-- Filtros -->
+                <!-- Filter: Otros -->
                 <select id="sort-filter">
                     <option value="recientes">Más recientes</option>
                     <option value="populares">Más populares</option>
@@ -63,10 +64,10 @@
                         <td>Frenos</td>
                         <td class="icon-container">
                             <a href="editar_categoria.php?id=1">
-                                <img src="/SmartStockManager-ADSO/public/images/edit-icon.png" alt="Editar" class="action-icon">
+                                <img src="/SmartStockManager-ADSO/public/images/icon/icon_edit.svg" alt="Editar" class="action-icon">
                             </a>
                             <a href="#" onclick="eliminarCategoria(1)">
-                                <img src="/SmartStockManager-ADSO/public/images/delete-icon.png" alt="Eliminar" class="action-icon">
+                                <img src="/SmartStockManager-ADSO/public/images/icon/icon_delete.svg" alt="Eliminar" class="action-icon">
                             </a>
                         </td>
                     </tr>

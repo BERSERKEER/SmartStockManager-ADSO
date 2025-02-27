@@ -14,8 +14,8 @@
   --hover-accent-clr: #7a80ff; /* Hover para elementos destacados */
 
   /*Size icon*/
-  --icon-height: ;
-  --icon-weight: ;
+  --icon-height: 24px;
+  --icon-weight: 24px;
 
   /**/
   --radius-size: 1em;

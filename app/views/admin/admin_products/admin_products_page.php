@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - productos</title>
-    <!-- Libreries -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Routes CSS Styles -->
+    <title>Productos - productos</title>
+    <!-- Libraries -->
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <!-- Favicon/images -->
     <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
-    <!-- Routes JS -->
+    <!-- JS Scripts -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
+    <!--Include componenet: Sidebar -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
     <main>
         <div class="container">
@@ -61,7 +62,21 @@
                         </div>
                     </div>
                 </div>
-                <!--Card:1-->
+                <!--Card:2-->
+                <div class="product-card">
+                    <img src="https://www.goodwood.com/globalassets/.road--racing/road/news/2024/10-october/best-muscle-cars-update/2025-cadillac-ct4-v-blackwing-copy.jpg?rxy=0.5,0.5&width=1280&height=720" alt="Producto" class="product-img">
+                    <div class="product-info">
+                        <h3>Nombre del Producto</h3>
+                        <p>Descripción corta del producto.</p>
+                        <span class="price">$99.99</span>
+                        <span class="stock">Stock: 15</span>
+                        <div class="product-actions">
+                            <p>Button</p>
+                            <p>Button</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Card:0-->
             </div>
         </div>
     </main>
