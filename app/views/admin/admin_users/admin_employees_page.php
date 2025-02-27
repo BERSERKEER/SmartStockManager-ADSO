@@ -5,31 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios - Empleados</title>
-    <!-- Libreries -->
+    <!-- Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Routes Styles -->
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <!-- Favicon/images -->
     <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
-    <!-- Routes JS -->
+    <!-- JS Scripts -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
+    <!--Include componenet: Sidebar -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
-
     <main>
         <div class="container">
-            <!-- Barra de búsqueda y botón Agregar -->
             <div class="search-filter-container">
                 <input type="text" id="search-bar" placeholder="Buscar..." />
-                <button id="search-btn">Buscar</button>
-
-                <!-- Botón para abrir modal de agregar proveedor -->
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">
-                    Agregar Proveedor
-                </button>
+                <p>Button</p>
+                <p>Button</p>
             </div>
         </div>
 
@@ -58,12 +54,11 @@
                         <td>Activo</td>
                         <td>Sanitas</td>
                         <td>
-                            <a href="#" class="edit-link" title="Editar" data-bs-toggle="modal" data-bs-target="#formModaledit"
-                                onclick="cargarDatosEmpleado(1, 'Ana Gómez', '1023456789', 'Vendedora', '1500000', 'Activo', 'Sanitas')">
-                                <img src="edit-icon.png" alt="Editar" class="action-icon">
+                            <a href="editar_categoria.php?id=1">
+                                <img src="/SmartStockManager-ADSO/public/images/icon/icon_edit.svg" alt="Editar" class="action-icon">
                             </a>
-                            <a href="#" class="delete-link" title="Eliminar">
-                                <img src="delete-icon.png" alt="Eliminar" class="action-icon">
+                            <a href="#" onclick="eliminarCategoria(1)">
+                                <img src="/SmartStockManager-ADSO/public/images/icon/icon_delete.svg" alt="Eliminar" class="action-icon">
                             </a>
                         </td>
                     </tr>
@@ -211,15 +206,6 @@
             </div>
         </div>
     </main>
-
-    <script>
-        function cargarDatosProveedor(id, nombre, email, telefono, direccion, ciudad, tipo, razon) {
-            document.getElementById('edit-id').value = id;
-            document.getElementById('edit-nombre').value = nombre;
-            document.getElementById('edit-email').value = email;
-            document.getElementById('edit-telefono').value = telefono;
-        }
-    </script>
 </body>
 
 </html>

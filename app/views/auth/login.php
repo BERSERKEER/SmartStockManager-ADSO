@@ -5,11 +5,13 @@ require_once __DIR__ . '/../../controllers/AuthController.php';
 $controller = new AuthController($pdo);
 $controller->autenticación();
 
-// Si el usuario ya inició sesión, redirigir según su rol
+//Valida y redirije segun el rol
 if (isset($_SESSION["user"])) {
-    if ($_SESSION["user"]["rol"] == 1) {
+    $rol = $_SESSION["user"]["rol"];
+
+    if ($rol == 1) {
         header("Location: /SmartStockManager-ADSO/app/views/admin/admin_home_page.php");
-    } elseif ($_SESSION["user"]["rol"] == 2) {
+    } elseif ($rol == 2) {
         header("Location: /SmartStockManager-ADSO/app/views/employee/employ_home_page.php");
     } else {
         header("Location: /SmartStockManager-ADSO/app/views/auth/login.php");
@@ -17,9 +19,8 @@ if (isset($_SESSION["user"])) {
     exit();
 }
 
-
-// Capturar errores de sesión
-$error = isset($_SESSION["error"]) ? $_SESSION["error"] : "";
+// Validación de errores
+$error = $_SESSION["error"] ?? "";
 unset($_SESSION["error"]);
 ?>
 
@@ -30,24 +31,22 @@ unset($_SESSION["error"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
-    <!-- Routes CSS Styles -->
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/login_style.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
-    <!--Routes JS-->
+    <!-- Favicon/images -->
     <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
+    <!-- JS Scripts -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
-
 </head>
 
 <body>
-    <?php if (!empty($error)): ?>
-        <p style="color: red;"><?= $error ?></p>
-    <?php endif; ?>
     <main class="auth-container" id="login">
         <div class="logo-container">
             <img src="/SmartStockManager-ADSO/public/images/large_lg-light.png" alt="Logo" />
         </div>
 
+        <!-- Mensajes de error -->
         <?php if (isset($_GET['error'])): ?>
             <p style="color:red;">
                 <?php
@@ -63,8 +62,11 @@ unset($_SESSION["error"]);
             </p>
         <?php endif; ?>
 
-        <form action="/SmartStockManager-ADSO/app/controllers/AuthController.php?action=autenticación" method="POST">
+        <?php if (!empty($error)): ?>
+            <p style="color: red;"><?= $error ?></p>
+        <?php endif; ?>
 
+        <form action="/SmartStockManager-ADSO/app/controllers/AuthController.php?action=autenticación" method="POST">
             <input type="hidden" name="action" value="login">
 
             <div class="form-field">
@@ -76,10 +78,11 @@ unset($_SESSION["error"]);
                 <input type="password" class="form-input" id="password" name="password" required placeholder=" ">
                 <label class="input-label" for="password">Contraseña</label>
             </div>
-
             <button type="submit" class="btn btn-primary">Ingresar</button>
+            <div class="form-link">
+                <a href="/SmartStockManager-ADSO/app/views/auth/account_recovery_page.php">Olvide contraseña</a>
+            </div>
         </form>
-
     </main>
 </body>
 

@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
     <!-- Libreries -->
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -95,9 +99,9 @@
                     <span>Configuracion</span>
                 </a>
             </li>
-            <!--Item 8-->
+            <!--Item 8: /SmartStockManager-ADSO/app/controllers/AuthController.php?action=logout-->
             <li>
-                <a href="/SmartStockManager-ADSO/app/controllers/AuthController.php?action=logout">
+                <a href="" id="logout-btn">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon-logout.svg" alt="Home" height="24px" width="24px">
                     <span>Cerrar sesion</span>
                 </a>
@@ -137,6 +141,7 @@
             })
         }
     </script>
+    <script src="/SmartStockManager-ADSO/public/js/logout.js"></script>
 </body>
 
 </html>

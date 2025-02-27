@@ -553,12 +553,6 @@ main p {
   box-shadow: 0 0 5px var(--accent-clr);
 }
 
-.dashboard-stats {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
 .stat-card {
   background: var(--primary-clr);
   padding: 15px;
@@ -604,15 +598,4 @@ td {
 .canceled {
   background: red;
   color: white;
-}
-
-.product-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  border-bottom: 1px solid #ddd;
-}
-
-.price {
-  font-weight: bold;
 }

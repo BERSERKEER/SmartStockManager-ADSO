@@ -1,3 +1,8 @@
+<?php if (!isset($_GET['correo'])) {
+	header("Location: /SmartStockManager-ADSO/app/views/auth/login.php");
+	exit();
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +10,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Creación de contraseña</title>
+
 	<!-- Routes CSS Styles -->
 	<link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/login_style.css?v=1.0">
 	<link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
-	<!--Routes JS-->
+
+	<!-- Routes JS -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="../../../public/js/new_password_account.js" defer></script>
 	<script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
@@ -16,42 +23,25 @@
 
 <body>
 	<main class="auth-container">
-		<!-- Content lg -->
+		<!-- Logo -->
 		<div class="logo-container">
-			<img src="/SmartStockManager-ADSO/public/images/large_lg-light.png" alt="Logo" />
+			<img src="/SmartStockManager-ADSO/public/images/large_lg-light.png" alt="Logo">
 		</div>
 
-		<!-- Form validate password -->
-		<form action="procesar_registro.php" name="usuariosdb" method="POST" class="login-form">
+		<!-- Formulario de validación de contraseña -->
+		<form action="/SmartStockManager-ADSO/app/controllers/AuthController.php?action=cambiarContrasena" name="" method="POST" class="login-form">
 			<div class="form-field">
-				<input
-					class="form-input"
-					type="password"
-					id="nueva-contrasena"
-					name="nueva_contrasena"
-					required
-					placeholder=" ">
+				<input class="form-input" type="password" id="nueva-contrasena" name="password" required placeholder=" ">
 				<label class="input-label" for="nueva-contrasena">Nueva contraseña</label>
+				<input type="hidden" name="correo" value="<?= $_GET['correo']; ?>">
 			</div>
 
-			<div class="form-field">
-				<input
-					class="form-input"
-					type="password"
-					id="confirmar-contrasena"
-					name="confirmar_contrasena"
-					required
-					placeholder=" ">
+			<!-- <div class="form-field">
+				<input class="form-input" type="password" id="confirmar-contrasena" name="confirmar_contrasena" required placeholder=" ">
 				<label class="input-label" for="confirmar-contrasena">Confirmar contraseña</label>
-			</div>
+			</div> -->
 
-			<button
-				class="btn btn-primary"
-				type="button"
-				name="registro"
-				onclick="mensaje()">
-				Cambiar
-			</button>
+			<button type="submit" class="btn btn-primary">Cambiar</button>
 		</form>
 	</main>
 </body>
