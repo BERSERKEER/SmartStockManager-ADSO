@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 1) {
+    header("Location: ./../views/auth/login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +22,6 @@
     <!-- Routes JS -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
-
 <!--Search date-->
 <?php
 date_default_timezone_set('America/Bogota'); // Ajusta a tu zona horaria
@@ -38,6 +45,7 @@ if ($hora >= 5 && $hora < 12) {
         <div class="container">
             <div class="welcome-container">
                 <div class="welcome-content">
+                    <h1>Bienvenido Administrador, <?php echo htmlspecialchars($_SESSION["user"]["nombre"]); ?></h1>
                     <h1><?php echo $saludo; ?>, bienvenido al Dashboard</h1>
                     <p><?php echo $mensaje; ?></p>
                     <p>Button</p>

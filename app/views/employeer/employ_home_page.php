@@ -15,7 +15,13 @@
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
-<!--../shared/sidebar.php'; -->
+<?php
+session_start();
+if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 2) {
+    header("Location: login.php");
+    exit();
+}
+?>
 
 <body>
     <!--Search database of rol-->
@@ -53,6 +59,7 @@
         <div class="container">
             <div class="welcome-container">
                 <div class="welcome-content">
+                    <h1>Bienvenido Vendedor, <?php echo htmlspecialchars($_SESSION["user"]["nombre"]); ?></h1>
                     <h1><?php echo $saludo; ?>, bienvenido al Dashboard</h1>
                     <p><?php echo $mensaje; ?></p>
                     <p>Explora nuestras herramientas avanzadas para optimizar tu productividad y mejorar tu rendimiento.</p>

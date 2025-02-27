@@ -1,3 +1,27 @@
+<?php
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../controllers/UserController.php';
+
+$controller = new UserController($pdo);
+$controller->login();
+
+// Si el usuario ya inició sesión, redirigir según su rol
+if (isset($_SESSION["user"])) {
+    if ($_SESSION["user"]["rol"] == 1) {
+        header("Location: ./admin_dashboard.php");
+    } elseif ($_SESSION["user"]["rol"] == 2) {
+        header("Location: ./sales_dashboard.php");
+    } else {
+        header("Location: ./dashboard.php");
+    }
+    exit();
+}
+
+// Capturar errores de sesión
+$error = isset($_SESSION["error"]) ? $_SESSION["error"] : "";
+unset($_SESSION["error"]); // Limpiar error después de mostrarlo
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +39,30 @@
 </head>
 
 <body>
+    <?php if (!empty($error)): ?>
+        <p style="color: red;"><?= $error ?></p>
+    <?php endif; ?>
     <main class="auth-container" id="login">
         <div class="logo-container">
             <img src="/SmartStockManager-ADSO/public/images/large_lg-light.png" alt="Logo" />
         </div>
 
-        <!--Mensaje de error_ -->
-        <?php if (isset($_GET['error'])) echo "<p style='color:red;'>Usuario o contraseña incorrectos</p>"; ?>
+        <?php if (isset($_GET['error'])): ?>
+            <p style="color:red;">
+                <?php
+                switch ($_GET['error']) {
+                    case "empty":
+                        echo "Por favor, completa todos los campos.";
+                        break;
+                    case "invalid":
+                        echo "Correo o contraseña incorrectos.";
+                        break;
+                }
+                ?>
+            </p>
+        <?php endif; ?>
 
-        <form class="login-form" action="/app/config/validate.php" method="POST">
+        <form class="login-form" action="../controllers/UserController.php?action=login" method="POST">
             <input type="hidden" name="action" value="login">
 
             <div class="form-field">
