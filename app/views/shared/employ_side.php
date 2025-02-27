@@ -91,7 +91,7 @@
             </li>
             <!--Item 7-->
             <li>
-                <a href="../../config/log_out.php">
+                <a href="/SmartStockManager-ADSO/app/controllers/AuthController.php?action=logout">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon-logout.svg" alt="Home" height="24px" width="24px">
                     <span>Cerrar sesion</span>
                 </a>

@@ -1,25 +1,26 @@
 <?php
-require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/../controllers/UserController.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../controllers/AuthController.php';
 
-$controller = new UserController($pdo);
-$controller->login();
+$controller = new AuthController($pdo);
+$controller->autenticación();
 
 // Si el usuario ya inició sesión, redirigir según su rol
 if (isset($_SESSION["user"])) {
     if ($_SESSION["user"]["rol"] == 1) {
-        header("Location: ./admin_dashboard.php");
+        header("Location: /SmartStockManager-ADSO/app/views/admin/admin_home_page.php");
     } elseif ($_SESSION["user"]["rol"] == 2) {
-        header("Location: ./sales_dashboard.php");
+        header("Location: /SmartStockManager-ADSO/app/views/employee/employ_home_page.php");
     } else {
-        header("Location: ./dashboard.php");
+        header("Location: /SmartStockManager-ADSO/app/views/auth/login.php");
     }
     exit();
 }
 
+
 // Capturar errores de sesión
 $error = isset($_SESSION["error"]) ? $_SESSION["error"] : "";
-unset($_SESSION["error"]); // Limpiar error después de mostrarlo
+unset($_SESSION["error"]);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +63,8 @@ unset($_SESSION["error"]); // Limpiar error después de mostrarlo
             </p>
         <?php endif; ?>
 
-        <form class="login-form" action="../controllers/UserController.php?action=login" method="POST">
+        <form action="/SmartStockManager-ADSO/app/controllers/AuthController.php?action=autenticación" method="POST">
+
             <input type="hidden" name="action" value="login">
 
             <div class="form-field">

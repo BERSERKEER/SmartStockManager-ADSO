@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 1) {
-    header("Location: ./../views/auth/login.php");
+    header("Location: ./../app/views/auth/login.php");
     exit();
 }
 ?>
@@ -22,24 +22,26 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 1) {
     <!-- Routes JS -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
-<!--Search date-->
-<?php
-date_default_timezone_set('America/Bogota'); // Ajusta a tu zona horaria
-$hora = date('H');
-
-if ($hora >= 5 && $hora < 12) {
-    $saludo = "Buenos días";
-    $mensaje = "Es un nuevo comienzo, lleno de oportunidades para lograr tus objetivos.";
-} elseif ($hora >= 12 && $hora < 18) {
-    $saludo = "Buenas tardes";
-    $mensaje = "Sigue avanzando, cada esfuerzo que haces te acerca más a tus metas.";
-} else {
-    $saludo = "Buenas noches";
-    $mensaje = "El día está por terminar, pero aún hay tiempo para hacer la diferencia.";
-}
-?>
 
 <body>
+
+    <?php
+    date_default_timezone_set('America/Bogota'); // Ajusta a tu zona horaria
+    $hora = date('H');
+
+    if ($hora >= 5 && $hora < 12) {
+        $saludo = "Buenos días";
+        $mensaje = "Es un nuevo comienzo, lleno de oportunidades para lograr tus objetivos.";
+    } elseif ($hora >= 12 && $hora < 18) {
+        $saludo = "Buenas tardes";
+        $mensaje = "Sigue avanzando, cada esfuerzo que haces te acerca más a tus metas.";
+    } else {
+        $saludo = "Buenas noches";
+        $mensaje = "El día está por terminar, pero aún hay tiempo para hacer la diferencia.";
+    }
+    ?>
+
+    <!--Include side -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
     <main>
         <div class="container">
