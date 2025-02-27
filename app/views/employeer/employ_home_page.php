@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 2) {
+    header("Location: ./../app/views/auth/login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,27 +23,7 @@
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
-<?php
-session_start();
-if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 2) {
-    header("Location: login.php");
-    exit();
-}
-?>
-
 <body>
-    <!--Search database of rol-->
-    <?php
-    $conn = mysqli_connect("localhost", "root", "", "db_ssm");
-    $SQL = "SELECT * FROM user LEFT JOIN permisos ON user.rol = permisos.id";
-    $dato = mysqli_query($conn, $SQL);
-
-    if ($dato->num_rows > 0) {
-        while ($fila = mysqli_fetch_array($dato)) {
-        }
-    }
-    ?>
-
     <!--Search date-->
     <?php
     date_default_timezone_set('America/Bogota'); // Ajusta a tu zona horaria

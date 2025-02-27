@@ -21,14 +21,14 @@ class AuthController
             if ($user) {
                 $_SESSION["user"] = $user;
                 $redirect_url = ($user["rol"] == 1)
-                    ? "./../views/admin/admin_dashboard.php"
-                    : "./../views/employeer/employ_dashboard.php";
+                    ? "/SmartStockManager-ADSO/app/views/admin/admin_dashboard.php"
+                    : "/SmartStockManager-ADSO/app/views/employeer/employ_home_page.php";
 
                 header("Location: $redirect_url");
                 exit();
             } else {
                 $_SESSION["error"] = "Usuario o contraseña incorrectos";
-                header("Location: ./../views/auth/login.php");
+                header("Location: /SmartStockManager-ADSO/app/views/auth/login.php");
                 exit();
             }
         }
@@ -43,7 +43,6 @@ class AuthController
     }
 }
 
-// Manejar las acciones según la URL
 if (isset($_GET["action"])) {
     require_once __DIR__ . '/../config/database.php';
     $controller = new AuthController($pdo);

@@ -1,11 +1,8 @@
 <?php
-
-require_once "../app/core/controller.php";
-
-class HomeController extends Controller
+class HomeController
 {
     public function index()
     {
-        $this->view("auth/landing");
+        require_once __DIR__ . '/../views/auth/landing.php';
     }
 }

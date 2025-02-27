@@ -25,7 +25,7 @@
             <li><a href="#Product">Productos</a></li>
             <li><a href="#Location">Ubicacion</a></li>
             <li><a href="#Contact">Contacto</a></li>
-            <li><a href="/SmartStockManager-ADSO/public/auth/login" class="active">Ingresar</a></li>
+            <li><a href="/SmartStockManager-ADSO/app/views/auth/login.php" class="active">Ingresar</a></li>
         </ul>
         <div class="menu-icon" id="menu-icon">☰</div>
     </nav>
