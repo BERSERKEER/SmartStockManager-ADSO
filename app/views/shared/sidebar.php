@@ -25,19 +25,19 @@
             </li>
             <!--Item 1-->
             <li>
-                <a href="../admin/admin_home_page.php">
+                <a href="/SmartStockManager-ADSO/app/views/admin/admin_home_page.php">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon-home.svg" alt="Home" height="24px" width="24px">
                     <span>Home</span>
                 </a>
             </li>
             <!--Item 2-->
             <li class="active">
-                <a href="../admin/admin_dashboard.php">
+                <a href="/SmartStockManager-ADSO/app/views/admin/admin_dashboard.php">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon_dashboard.svg" alt="Home" height="24px" width="24px">
                     <span>Dashboard</span>
                 </a>
             </li>
-            <!--Item 3-->
+            <!--Item 3 Multiples-->
             <li>
                 <button onclick=toggleSubMenu(this) class="dropdown-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
@@ -50,21 +50,21 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="../admin/admin_products/admin_category_page.php">Categorias</a></li>
-                        <li><a href="../admin/admin_products/admin_products_page.php">Productos</a></li>
+                        <li><a href="/SmartStockManager-ADSO/app/views/admin/admin_products/admin_category_page.php">Categorias</a></li>
+                        <li><a href="/SmartStockManager-ADSO/app/views/admin/admin_products/admin_products_page.php">Productos</a></li>
                     </div>
                 </ul>
             </li>
             <!--Item 4-->
             <li>
-                <a href="../admin/admin_stock control_page.php">
+                <a href="/SmartStockManager-ADSO/app/views/admin/admin_stock control_page.php">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon-table.svg" alt="Home" height="24px" width="24px">
                     <span>Control de stock</span>
                 </a>
             </li>
             <!--Item 5-->
             <li>
-                <a href="../admin/admin_report_page.php">
+                <a href="/SmartStockManager-ADSO/app/views/admin/admin_report_page.php">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon-table.svg" alt="Home" height="24px" width="24px">
                     <span>Reportes</span>
                 </a>
@@ -82,15 +82,15 @@
                 </button>
                 <ul class="sub-menu">
                     <div>
-                        <li><a href="../admin/admin_users/admin_clients_page.php">Clientes</a></li>
-                        <li><a href="../admin/admin_users/admin_employees_page.php">Empleados</a></li>
-                        <li><a href="../admin/admin_users/admin_providers_page.php">Provedores</a></li>
+                        <li><a href="/SmartStockManager-ADSO/app/views/admin/admin_users/admin_clients_page.php">Clientes</a></li>
+                        <li><a href="/SmartStockManager-ADSO/app/views/admin/admin_users/admin_employees_page.php">Empleados</a></li>
+                        <li><a href="/SmartStockManager-ADSO/app/views/admin/admin_users/admin_providers_page.php">Provedores</a></li>
                     </div>
                 </ul>
             </li>
             <!--Item 7-->
             <li>
-                <a href="../admin/admin_settings_page.php">
+                <a href="/SmartStockManager-ADSO/app/views/admin/admin_settings_page.php">
                     <img src="/SmartStockManager-ADSO/public/images/icon/icon-settings.svg" alt="Home" height="24px" width="24px">
                     <span>Configuracion</span>
                 </a>

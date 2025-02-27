@@ -1,3 +1,4 @@
+<!--Inicia session ven base al rol-->
 <?php
 session_start();
 if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 1) {
@@ -13,42 +14,42 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["rol"] != 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
-    <!-- Libreries -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Routes CSS -->
+    <!-- Libraries -->
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/styles.css">
     <link rel="stylesheet" href="/SmartStockManager-ADSO/public/css/normalize.css">
+    <!-- Favicon/images -->
     <link id="favicon" rel="icon" type="image/png" href="/SmartStockManager-ADSO/public/images/short_lg-dark.png">
-    <!-- Routes JS -->
+    <!-- JS Scripts -->
     <script src="/SmartStockManager-ADSO/public/js/icon-theme.js"></script>
 </head>
 
 <body>
-
+    <!--Funcion: texto en base a zona horaria-->
     <?php
-    date_default_timezone_set('America/Bogota'); // Ajusta a tu zona horaria
+    date_default_timezone_set('America/Bogota');
     $hora = date('H');
 
     if ($hora >= 5 && $hora < 12) {
-        $saludo = "Buenos días";
-        $mensaje = "Es un nuevo comienzo, lleno de oportunidades para lograr tus objetivos.";
+        $saludo = "Buenos días, Administrador";
+        $mensaje = "Un nuevo día para liderar y optimizar la gestión del sistema.";
     } elseif ($hora >= 12 && $hora < 18) {
-        $saludo = "Buenas tardes";
-        $mensaje = "Sigue avanzando, cada esfuerzo que haces te acerca más a tus metas.";
+        $saludo = "Buenas tardes, Administrador";
+        $mensaje = "Sigue supervisando y asegurando el buen funcionamiento de la plataforma.";
     } else {
-        $saludo = "Buenas noches";
-        $mensaje = "El día está por terminar, pero aún hay tiempo para hacer la diferencia.";
+        $saludo = "Buenas noches, Administrador";
+        $mensaje = "Antes de cerrar el día, revisa los últimos detalles para un mejor control.";
     }
     ?>
 
-    <!--Include side -->
+    <!--Include componenet: Sidebar -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/SmartStockManager-ADSO/app/views/shared/sidebar.php'; ?>
     <main>
         <div class="container">
             <div class="welcome-container">
                 <div class="welcome-content">
-                    <h1>Bienvenido Administrador, <?php echo htmlspecialchars($_SESSION["user"]["nombre"]); ?></h1>
-                    <h1><?php echo $saludo; ?>, bienvenido al Dashboard</h1>
+                    <!--Variables: Texto de bienvenida en base a funcion zona horaria-->
+                    <h1><?php echo $saludo; ?> <?php echo htmlspecialchars($_SESSION["user"]["nombre"]); ?>, bienvenido al Dashboard</h1>
                     <p><?php echo $mensaje; ?></p>
                     <p>Button</p>
                 </div>
